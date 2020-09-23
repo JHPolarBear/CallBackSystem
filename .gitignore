@@ -9,3 +9,11 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+
+# ignoring component
+
+# Visual Studio Property
+.vs/
+
+# Build Property
+.build/
