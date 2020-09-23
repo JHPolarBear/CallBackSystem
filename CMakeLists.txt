@@ -5,7 +5,11 @@ cmake_minimum_required (VERSION 3.8)
 
 project ("CallBackSystem")
 
+# specify the C++ standard
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
 # 이 프로젝트의 실행 파일에 소스를 추가합니다.
-add_executable (CallBackSystem "CallBackSystem.cpp" "CallBackSystem.h")
+add_executable (CallBackSystem "Src/CallBackSystem/CallBackSystem.cpp" "Src/CallBackSystem/CallBackSystem.h"  "Src/Observer/Observer.h" "Src/Subjcet/Subject.h")
 
 # TODO: 필요한 경우 테스트를 추가하고 대상을 설치합니다.
