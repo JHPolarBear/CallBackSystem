@@ -16,4 +16,7 @@ _deps
 .vs/
 
 # Build Property
-.build/
+build/
+
+# output folder
+out/
