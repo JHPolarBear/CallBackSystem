@@ -5,8 +5,10 @@
 
 using namespace std;
 
-int main()
+CallbackSystem::CallbackSystem()
 {
-	cout << "Hello CMake." << endl;
-	return 0;
+}
+
+CallbackSystem::~CallbackSystem()
+{
 }

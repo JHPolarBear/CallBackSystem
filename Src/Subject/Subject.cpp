@@ -2,6 +2,23 @@
 
 using namespace std;
 
+Subject::~Subject()
+{
+	// Release all Unique ptr
+	if(m_vecObserver.size())
+	{
+		std::vector<unique_ptr<Observer>>::iterator _iter = m_vecObserver.begin();
+
+		while(_iter != m_vecObserver.end())
+		{
+			auto ptr = std::move(*_iter);
+			ptr.release();
+
+			m_vecObserver.erase(_iter);
+		}
+	}
+}
+
 void Subject::Register(unique_ptr<Observer> _observer)
 {
 	std::vector<unique_ptr<Observer>>::iterator _iter = std::find(m_vecObserver.begin(), m_vecObserver.end(), _observer);

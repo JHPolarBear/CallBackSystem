@@ -5,6 +5,16 @@
 
 #include <iostream>
 
-#include "../Subjcet/Subject.h"
+#include "../Subject/Subject.h"
 
 // TODO: 여기서 프로그램에 필요한 추가 헤더를 참조합니다.
+
+class CallbackSystem : public Subject
+{
+public:
+	CallbackSystem();
+	~CallbackSystem();
+	
+private:
+
+};
