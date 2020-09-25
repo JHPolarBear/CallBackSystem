@@ -3,7 +3,7 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("CallBackSystem")
+project ("CallbackSystem")
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
@@ -35,7 +35,7 @@ file(GLOB_RECURSE SRC_COMMON
 
 
 # 이 프로젝트의 실행 파일에 소스를 추가합니다.
-add_executable(CallBackSystem ${SRC_MAIN} ${SRC_CALLBACKSYSTEM} ${SRC_OBSERVER} ${SRC_SUBJECT} ${SRC_COMMON})
+add_executable(CallbackSystem ${SRC_MAIN} ${SRC_CALLBACKSYSTEM} ${SRC_OBSERVER} ${SRC_SUBJECT} ${SRC_COMMON})
 
 source_group("Source Files/Common" FILES ${SRC_COMMON})
 source_group("Source Files/CallBackSystem" FILES ${SRC_CALLBACKSYSTEM})

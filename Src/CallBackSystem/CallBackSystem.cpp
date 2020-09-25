@@ -3,12 +3,7 @@
 
 #include "CallBackSystem.h"
 
-using namespace std;
-
-CallbackSystem::CallbackSystem()
+namespace CallbackSystem
 {
-}
-
-CallbackSystem::~CallbackSystem()
-{
-}
+	static 
+};
