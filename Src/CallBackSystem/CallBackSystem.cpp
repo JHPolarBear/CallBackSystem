@@ -5,5 +5,12 @@
 
 namespace CallbackSystem
 {
-	static 
+	static CallbackManager* m_pCallbackManager;
+	void Initialize()
+	{
+		if(!m_pCallbackManager)
+		{
+			m_pCallbackManager = new CallbackManager();
+		}
+	}
 };

@@ -5,12 +5,12 @@
 
 #include <iostream>
 
-#include "../Subject/Subject.h"
+#include "CallbackManager.h"
 
 // TODO: 여기서 프로그램에 필요한 추가 헤더를 참조합니다.
 
 namespace CallbackSystem
 {
-	
+	void Initialize();
 
 };
