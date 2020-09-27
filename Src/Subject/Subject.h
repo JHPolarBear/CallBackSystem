@@ -11,12 +11,12 @@ class Subject
 public:
 	virtual ~Subject();
 
-	void Register(std::unique_ptr<Observer> _observer);
+	void Register(std::shared_ptr<Observer> _observer);
 
-	void Unregister(std::unique_ptr<Observer> _observer);
+	void Unregister(std::shared_ptr<Observer> _observer);
 
 	void Notify(const Entity& entity, E_EVENT_TYPE eType);
 
 protected:
-	std::vector<std::unique_ptr<Observer>> m_vecObserver;
+	std::vector<std::shared_ptr<Observer>> m_vecObserver;
 };

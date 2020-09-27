@@ -1,16 +1,26 @@
-﻿// CallBackSystem.h: 표준 시스템 포함 파일
-// 또는 프로젝트 특정 포함 파일이 들어 있는 포함 파일입니다.
-
+﻿/***********************************************************
+- Interface of CallbackManager class  which
+  managing observer class.
+- Written by: JHP
+***********************************************************/
 #pragma once
 
 #include <iostream>
 
 #include "CallbackManager.h"
-
-// TODO: 여기서 프로그램에 필요한 추가 헤더를 참조합니다.
+#include "../Common/Common.h"
 
 namespace CallbackSystem
 {
+	// Initialize
 	void Initialize();
+
+	// Register & UnRegister Observer
+	void Register(std::shared_ptr<Observer> _observer);
+
+	void Unregister(std::shared_ptr<Observer> _observer);
+
+	// On notify function
+	void Notify(const Entity& entity, E_EVENT_TYPE eType);
 
 };
