@@ -14,11 +14,11 @@ set(VD_SRC "${CMAKE_SOURCE_DIR}/Src")
 # specify file path
 file(GLOB_RECURSE SRC_MAIN
 	"${VD_SRC}/*.h"
-	"${VD_SRC}/*.cpp")
+	"${VD_SRC}/*.cpp"	)
 
-file(GLOB_RECURSE SRC_CALLBACKSYSTEM
-	"${VD_SRC}/CallBackSystem/*.h"
-	"${VD_SRC}/CallBackSystem/*.cpp")
+file(GLOB_RECURSE SRC_COMMON
+	"${VD_SRC}/Common/*.h"
+	"${VD_SRC}/Common/*.cpp")
 
 file(GLOB_RECURSE SRC_SUBJECT
 	"${VD_SRC}/Subject/*.h"
@@ -28,19 +28,30 @@ file(GLOB_RECURSE SRC_OBSERVER
 	"${VD_SRC}/Observer/*.h"
 	"${VD_SRC}/Observer/*.cpp")
 
-file(GLOB_RECURSE SRC_COMMON
-	"${VD_SRC}/Common/*.h"
-	"${VD_SRC}/Common/*.cpp")
+file(GLOB_RECURSE SRC_CALLBACKSYSTEM
+	"${VD_SRC}/CallBackSystem/*.h"
+	"${VD_SRC}/CallBackSystem/*.cpp")
+
+file(GLOB_RECURSE SRC_QUESTMANAGER
+	"${VD_SRC}/QuestManager/*.h"
+	"${VD_SRC}/QuestManager/*.cpp")
 
 
 
-# 이 프로젝트의 실행 파일에 소스를 추가합니다.
-add_executable(CallbackSystem ${SRC_MAIN} ${SRC_CALLBACKSYSTEM} ${SRC_OBSERVER} ${SRC_SUBJECT} ${SRC_COMMON})
+# Add the source to this project's executable file.
+add_executable(CallbackSystem ${SRC_MAIN} ${SRC_COMMON} ${SRC_OBSERVER} ${SRC_SUBJECT} 
+${SRC_CALLBACKSYSTEM} ${SRC_QUESTMANAGER})
 
+source_group("" FILES ${SRC_MAIN})
 source_group("Source Files/Common" FILES ${SRC_COMMON})
-source_group("Source Files/CallBackSystem" FILES ${SRC_CALLBACKSYSTEM})
+
+# Base Structuer for observer pattern
 source_group("Source Files/Subject" FILES ${SRC_SUBJECT})
 source_group("Source Files/Observer" FILES ${SRC_OBSERVER})
-source_group("" FILES ${SRC_MAIN})
+
+# Callback system components
+source_group("Source Files/CallBackSystem" FILES ${SRC_CALLBACKSYSTEM})
+source_group("Source Files/QuestManager" FILES ${SRC_QUESTMANAGER})
+
 
 # TODO: 필요한 경우 테스트를 추가하고 대상을 설치합니다.
