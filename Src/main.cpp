@@ -1,13 +1,13 @@
 #include <iostream>
 
-#include "CallBackSystem\CallBackSystem.h"
+#include "EventListener\EventListenerSystem.h"
 
 using namespace std;
 
 int main()
 {
-	//Initialize Callback system
-	CallbackSystem::Initialize();
+	//Initialize EventListener system
+	EventListenerSystem::Initialize();
 
 	cout << "Hello CMake." << endl;
 	return 0;

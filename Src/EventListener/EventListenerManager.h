@@ -7,11 +7,11 @@
 #include "../Subject/Subject.h"
 
 
-class CallbackManager : public Subject
+class EventListenerManager : public Subject
 {
 public:
-	CallbackManager();
-	virtual ~CallbackManager();
-
+	EventListenerManager();
+	virtual ~EventListenerManager();
+	
 protected:
 }; 

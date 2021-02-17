@@ -1,9 +1,9 @@
-﻿# CMakeList.txt: CallBackSystem에 대한 CMake 프로젝트, 여기에 소스를 포함하고
+﻿# CMakeList.txt: EventListenerSystem에 대한 CMake 프로젝트, 여기에 소스를 포함하고
 # 프로젝트 특정 논리를 정의합니다.
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("CallbackSystem")
+project ("EventListenerSystem")
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 14)
@@ -28,19 +28,14 @@ file(GLOB_RECURSE SRC_OBSERVER
 	"${VD_SRC}/Observer/*.h"
 	"${VD_SRC}/Observer/*.cpp")
 
-file(GLOB_RECURSE SRC_CALLBACKSYSTEM
-	"${VD_SRC}/CallBackSystem/*.h"
-	"${VD_SRC}/CallBackSystem/*.cpp")
-
-file(GLOB_RECURSE SRC_QUESTMANAGER
-	"${VD_SRC}/QuestManager/*.h"
-	"${VD_SRC}/QuestManager/*.cpp")
-
+file(GLOB_RECURSE SRC_EVENTLISTENER
+	"${VD_SRC}/EventListener/*.h"
+	"${VD_SRC}/EventListener/*.cpp")
 
 
 # Add the source to this project's executable file.
-add_executable(CallbackSystem ${SRC_MAIN} ${SRC_COMMON} ${SRC_OBSERVER} ${SRC_SUBJECT} 
-${SRC_CALLBACKSYSTEM} ${SRC_QUESTMANAGER})
+add_executable(EventListenerSystem ${SRC_MAIN} ${SRC_COMMON} ${SRC_OBSERVER} ${SRC_SUBJECT} 
+${SRC_EVENTLISTENER} )
 
 source_group("" FILES ${SRC_MAIN})
 source_group("Source Files/Common" FILES ${SRC_COMMON})
@@ -49,9 +44,8 @@ source_group("Source Files/Common" FILES ${SRC_COMMON})
 source_group("Source Files/Subject" FILES ${SRC_SUBJECT})
 source_group("Source Files/Observer" FILES ${SRC_OBSERVER})
 
-# Callback system components
-source_group("Source Files/CallBackSystem" FILES ${SRC_CALLBACKSYSTEM})
-source_group("Source Files/QuestManager" FILES ${SRC_QUESTMANAGER})
+# EventDispatcher system components
+source_group("Source Files/EventListener" FILES ${SRC_EVENTLISTENER})
 
 
 # TODO: 필요한 경우 테스트를 추가하고 대상을 설치합니다.

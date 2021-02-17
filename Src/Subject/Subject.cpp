@@ -2,6 +2,11 @@
 
 using namespace std;
 
+Subject::Subject()
+{
+	
+}
+
 Subject::~Subject()
 {
 	// Release all Unique ptr

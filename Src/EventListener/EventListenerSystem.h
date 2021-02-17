@@ -1,5 +1,5 @@
 ﻿/***********************************************************
-- Interface of CallbackManager class  which
+- Interface of EventListenerManager class  which
   managing observer class.
 - Written by: JHP
 ***********************************************************/
@@ -7,10 +7,10 @@
 
 #include <iostream>
 
-#include "CallbackManager.h"
+#include "EventListenerManager.h"
 #include "../Common/Common.h"
 
-namespace CallbackSystem
+namespace EventListenerSystem
 {
 	// Initialize
 	void Initialize();
