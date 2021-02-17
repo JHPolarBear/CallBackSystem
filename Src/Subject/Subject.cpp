@@ -9,14 +9,14 @@ Subject::Subject()
 
 Subject::~Subject()
 {
-	// Release all Unique ptr
+	// Release all Shared ptr
 	if(m_vecObserver.size())
 	{
-		std::vector<shared_ptr<Observer>>::iterator _iter = m_vecObserver.begin();
+		std::vector<std::shared_ptr<Observer>>::iterator _iter = m_vecObserver.begin();
 
 		while(_iter != m_vecObserver.end())
 		{
-			m_vecObserver.erase(_iter);
+			_iter = m_vecObserver.erase(_iter);
 		}
 	}
 }
@@ -47,13 +47,13 @@ void Subject::Unregister(shared_ptr<Observer> _observer)
 	}
 }
 
-void Subject::Notify(const Entity& entity, E_EVENT_TYPE eType)
+void Subject::Notify(E_EVENT_TYPE eType)
 {
 	vector<shared_ptr<Observer>>::iterator _iter = m_vecObserver.begin();
 
 	while(_iter != m_vecObserver.end())
 	{
-		(*_iter).get()->onNotify(entity, eType);
+		(*_iter).get()->onNotify(eType);
 
 		_iter++;
 	}

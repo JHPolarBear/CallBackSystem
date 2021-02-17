@@ -32,10 +32,14 @@ file(GLOB_RECURSE SRC_EVENTLISTENER
 	"${VD_SRC}/EventListener/*.h"
 	"${VD_SRC}/EventListener/*.cpp")
 
+file(GLOB_RECURSE SRC_SAMPLE
+	"${VD_SRC}/Sample/*.h"
+	"${VD_SRC}/Sample/*.cpp")
+
 
 # Add the source to this project's executable file.
 add_executable(EventListenerSystem ${SRC_MAIN} ${SRC_COMMON} ${SRC_OBSERVER} ${SRC_SUBJECT} 
-${SRC_EVENTLISTENER} )
+${SRC_EVENTLISTENER} ${SRC_SAMPLE} )
 
 source_group("" FILES ${SRC_MAIN})
 source_group("Source Files/Common" FILES ${SRC_COMMON})
@@ -46,6 +50,9 @@ source_group("Source Files/Observer" FILES ${SRC_OBSERVER})
 
 # EventDispatcher system components
 source_group("Source Files/EventListener" FILES ${SRC_EVENTLISTENER})
+
+# EventDispatcher system components
+source_group("Source Files/Sample" FILES ${SRC_SAMPLE})
 
 
 # TODO: 필요한 경우 테스트를 추가하고 대상을 설치합니다.

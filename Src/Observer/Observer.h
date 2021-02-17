@@ -1,18 +1,23 @@
 #pragma once
 
-#include "../Common/Entity.h"
-#include "../Common/EventDefines.h"
-#include "../Common/Common.h"
+/***********************************************************
+* Base observer class : implement minimum functionality
+* 관찰자 기본 클래스 : 관찰자의 최소 기능만 구현
+* Written by: JHP
+***********************************************************/
 
-/** Base observer class : implement minimum functionality 
- * 관찰자 기본 클래스 : 관찰자의 최소 기능만 구현			**/
+#include "../Common/EventDefines.h"
+#include "../Common/CommonDefines.h"
+
 class Observer
 {
 public:
 	Observer();
 	virtual ~Observer();
 
-	virtual void onNotify(const Entity& entity, E_EVENT_TYPE etype) = 0;
+	// Handling events passed from subject class
+	// Format of parameters should be same with Subject::Notify(...)
+	virtual void onNotify(E_EVENT_TYPE etype) = 0;
 
 private:
 };

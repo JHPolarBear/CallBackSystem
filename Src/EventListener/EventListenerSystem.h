@@ -8,19 +8,21 @@
 #include <iostream>
 
 #include "EventListenerManager.h"
-#include "../Common/Common.h"
+#include "../Common/CommonDefines.h"
 
+/** Interface for event listener 
+ * 	이벤트 리스너 인터페이스		**/
 namespace EventListenerSystem
 {
 	// Initialize
 	void Initialize();
 
 	// Register & UnRegister Observer
-	void Register(std::shared_ptr<Observer> _observer);
+	void AddListener(std::shared_ptr<Observer> _observer);
 
-	void Unregister(std::shared_ptr<Observer> _observer);
+	void RemoveListener(std::shared_ptr<Observer> _observer);
 
 	// On notify function
-	void Notify(const Entity& entity, E_EVENT_TYPE eType);
+	void DispatchEvent(E_EVENT_TYPE eType);
 
 };
