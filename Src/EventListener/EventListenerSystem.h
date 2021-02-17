@@ -10,8 +10,6 @@
 #include "EventListenerManager.h"
 #include "../Common/CommonDefines.h"
 
-/** Interface for event listener 
- * 	이벤트 리스너 인터페이스		**/
 namespace EventListenerSystem
 {
 	// Initialize
